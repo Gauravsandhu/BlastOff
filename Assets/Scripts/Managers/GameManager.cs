@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance{get; private set;}
     public GameState CurrentState {get; private set;}
+    public int losingPlayer { get; private set; }
 
     public static event Action<GameState> OnStateChanged;
 
@@ -40,7 +41,9 @@ public class GameManager : MonoBehaviour
 
     public void RegisterRoundWin(int winningPlayer)
     {
-        if(winningPlayer == 1)
+        losingPlayer = (winningPlayer == 1) ? 2 : 1;
+
+        if (winningPlayer == 1)
         {
             player1Score++;
         }
@@ -49,13 +52,13 @@ public class GameManager : MonoBehaviour
             player2Score++;
         }
 
-         if (player1Score >= roundsToWin || player2Score >= roundsToWin)
+        if (player1Score >= roundsToWin || player2Score >= roundsToWin)
         {
             ChangeState(GameState.MatchEnd);
         }
         else
         {
-            ChangeState(GameState.RoundEnd);
+            ChangeState(GameState.PowerupSelect);
         }
     }
 

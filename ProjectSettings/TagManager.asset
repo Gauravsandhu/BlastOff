@@ -7,6 +7,9 @@ TagManager:
   - Cannon
   - Wall
   - BouncyWall
+  - NeutralWall
+  - Player1Cannon
+  - Player2Cannon
   layers:
   - Default
   - TransparentFX

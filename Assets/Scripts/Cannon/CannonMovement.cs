@@ -1,4 +1,5 @@
 using Unity.GraphToolkit.Editor;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,9 @@ public class CannonMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float minY = -4f;
     [SerializeField] private float maxY = 4f;
+
+    [SerializeField] private CannonStats stats;
+
 
     private CannonInput input;
 
@@ -24,7 +28,7 @@ public class CannonMovement : MonoBehaviour
         if(canMove){
         float vertical = input.GetVerticalInput();
         Vector3 pos = transform.position;
-        pos.y += vertical * moveSpeed * Time.deltaTime;
+        pos.y += vertical * moveSpeed * stats.moveSpeedMultiplier * Time.deltaTime;
         pos.y = Mathf.Clamp(pos.y, minY, maxY);
         transform.position = pos;
         }
