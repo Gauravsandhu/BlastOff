@@ -19,7 +19,7 @@ public class PowerUpUIManager : MonoBehaviour
     
     {
          Debug.Log("PowerupUIManager heard state: " + newState);
-        if(newState  == GameState.PowerupSelect)
+        if(newState  == GameState.PowerUpSelect)
         {
             PowerUpPanel.SetActive(true);
         }

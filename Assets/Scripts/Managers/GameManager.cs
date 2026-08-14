@@ -14,6 +14,20 @@ public class GameManager : MonoBehaviour
     public int player1Score = 0;
     public int player2Score = 0;
 
+    // Respawn Variables
+    [SerializeField] private Transform player1SpawnPoint;
+    [SerializeField] private Transform player2SpawnPoint;
+    [SerializeField] private GameObject player1Cannon;
+    [SerializeField] private GameObject player2Cannon;
+
+    public void RespawnCannons()
+    {
+        player1Cannon.transform.position = player1SpawnPoint.position;
+        player2Cannon.transform.position = player2SpawnPoint.position;
+        player1Cannon.SetActive(true);
+        player2Cannon.SetActive(true);
+    }
+
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -32,8 +46,14 @@ public class GameManager : MonoBehaviour
     }
 
     public void ChangeState(GameState newState)
+
     {
+        if(newState == GameState.RoundLive)
+        {
+            RespawnCannons();
+        }
         CurrentState = newState;
+        
         Debug.Log($"State Changed to : {newState}");
         OnStateChanged?.Invoke(newState);
     }
@@ -58,7 +78,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            ChangeState(GameState.PowerupSelect);
+            ChangeState(GameState.PowerUpSelect);
         }
     }
 

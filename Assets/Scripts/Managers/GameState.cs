@@ -3,7 +3,7 @@ public enum GameState
     RoundLive,
     Firing,
     RoundEnd,
-    PowerupSelect,
+    PowerUpSelect,
     NextRound,
     MatchEnd    
 }
