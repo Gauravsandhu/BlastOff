@@ -6,7 +6,7 @@ public class Card : MonoBehaviour
     [SerializeField] SpriteRenderer cardImageRenderer;
     [SerializeField] TextMeshPro cardTextRenderer;
 
-    private CardSO cardInfo;  // why do we need this?
+    private CardSO cardInfo;  
 
     public void Setup(CardSO card)
     {

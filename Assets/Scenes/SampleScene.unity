@@ -211,6 +211,68 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &125893269
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 125893270}
+  m_Layer: 0
+  m_Name: CardPositionTwo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &125893270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 125893269}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3.8702497, y: -0.75316, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1435900332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &329809503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 329809504}
+  m_Layer: 0
+  m_Name: CardPositionThree
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &329809504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329809503}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.06975, y: -0.75316, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1435900332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -348,6 +410,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &521716148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 521716149}
+  m_Layer: 0
+  m_Name: CardPositionOne
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &521716149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521716148}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -10.64025, y: -0.92315996, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1435900332}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &584137537
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +454,7 @@ GameObject:
   - component: {fileID: 584137540}
   m_Layer: 0
   m_Name: Barrel2
-  m_TagString: Cannon
+  m_TagString: Player2Cannon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -493,6 +586,8 @@ GameObject:
   - component: {fileID: 623255079}
   - component: {fileID: 623255083}
   - component: {fileID: 623255084}
+  - component: {fileID: 623255085}
+  - component: {fileID: 623255086}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2Cannon
@@ -515,6 +610,7 @@ MonoBehaviour:
   moveSpeed: 8
   minY: -5
   maxY: 5
+  stats: {fileID: 623255085}
 --- !u!114 &623255080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,9 +731,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CannonFire
   cannonballPrefab: {fileID: 8995412305419786986, guid: 21787863d39a543c1807b085a60995f1, type: 3}
   input: {fileID: 623255080}
+  stats: {fileID: 623255085}
   muzzle: {fileID: 1369206542}
+  baseDamage: 50
   firePower: 20
   reloadTime: 1
+--- !u!114 &623255085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623255077}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201c9a55122b748589e93fb26beb16d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CannonStats
+  moveSpeedMultiplier: 1
+  reloadSpeedMultiplier: 1
+  damageMultiplier: 1
+  bulletSpeedMultiplier: 1
+  healthMultiplier: 1
+--- !u!114 &623255086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623255077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13dfb9d4f93f545c5acc6246b8a20159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CannonHealth
+  baseMaxHealth: 100
+  playerNumber: 2
+  stats: {fileID: 623255085}
+  currentHealth: 0
 --- !u!1 &739607791
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,7 +798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa871752969ba41268e92374ced47e4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PowerUpUIManager
-  PowerUpPanel: {fileID: 1554646122}
+  PowerUpPanel: {fileID: 1435900331}
 --- !u!4 &739607793
 Transform:
   m_ObjectHideFlags: 0
@@ -694,6 +825,10 @@ PrefabInstance:
     - target: {fileID: 1135745957344541389, guid: 2c0e84a09f39f4dd8b7e92eb969ca30c, type: 3}
       propertyPath: m_Name
       value: TopWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135745957344541389, guid: 2c0e84a09f39f4dd8b7e92eb969ca30c, type: 3}
+      propertyPath: m_TagString
+      value: NeutralWall
       objectReference: {fileID: 0}
     - target: {fileID: 5965008382923668283, guid: 2c0e84a09f39f4dd8b7e92eb969ca30c, type: 3}
       propertyPath: m_LocalScale.x
@@ -859,6 +994,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BottomWall
       objectReference: {fileID: 0}
+    - target: {fileID: 1135745957344541389, guid: 2c0e84a09f39f4dd8b7e92eb969ca30c, type: 3}
+      propertyPath: m_TagString
+      value: NeutralWall
+      objectReference: {fileID: 0}
     - target: {fileID: 5965008382923668283, guid: 2c0e84a09f39f4dd8b7e92eb969ca30c, type: 3}
       propertyPath: m_LocalScale.x
       value: 22.621473
@@ -908,6 +1047,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c0e84a09f39f4dd8b7e92eb969ca30c, type: 3}
+--- !u!1 &1184045042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1184045043}
+  m_Layer: 0
+  m_Name: Player1SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1184045043
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184045042}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.86, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1213256703
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,6 +1092,8 @@ GameObject:
   - component: {fileID: 1213256707}
   - component: {fileID: 1213256708}
   - component: {fileID: 1213256709}
+  - component: {fileID: 1213256710}
+  - component: {fileID: 1213256711}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player1Cannon
@@ -1033,6 +1205,7 @@ MonoBehaviour:
   moveSpeed: 8
   minY: -5
   maxY: 5
+  stats: {fileID: 1213256710}
 --- !u!114 &1213256708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1064,9 +1237,93 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CannonFire
   cannonballPrefab: {fileID: 8995412305419786986, guid: 21787863d39a543c1807b085a60995f1, type: 3}
   input: {fileID: 1213256706}
+  stats: {fileID: 1213256710}
   muzzle: {fileID: 9249764}
+  baseDamage: 50
   firePower: 20
   reloadTime: 1
+--- !u!114 &1213256710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213256703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201c9a55122b748589e93fb26beb16d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CannonStats
+  moveSpeedMultiplier: 1
+  reloadSpeedMultiplier: 1
+  damageMultiplier: 1
+  bulletSpeedMultiplier: 1
+  healthMultiplier: 1
+--- !u!114 &1213256711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1213256703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13dfb9d4f93f545c5acc6246b8a20159, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CannonHealth
+  baseMaxHealth: 100
+  playerNumber: 1
+  stats: {fileID: 1213256710}
+  currentHealth: 0
+--- !u!1 &1311062199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1311062201}
+  - component: {fileID: 1311062200}
+  m_Layer: 0
+  m_Name: CannonStats
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1311062200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311062199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201c9a55122b748589e93fb26beb16d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CannonStats
+  moveSpeedMultiplier: 1
+  reloadSpeedMultiplier: 1
+  damageMultiplier: 1
+  bulletSpeedMultiplier: 1
+  healthMultiplier: 1
+--- !u!4 &1311062201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1311062199}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.66088, y: 0.6968, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1369206541
 GameObject:
   m_ObjectHideFlags: 0
@@ -1159,6 +1416,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1 &1435900331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1435900332}
+  m_Layer: 0
+  m_Name: CardSelectionUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1435900332
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435900331}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.52025, y: 0.39316, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 521716149}
+  - {fileID: 125893270}
+  - {fileID: 329809504}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1438282922
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,7 +1463,7 @@ GameObject:
   - component: {fileID: 1438282925}
   m_Layer: 0
   m_Name: Barrel1
-  m_TagString: Cannon
+  m_TagString: Player1Cannon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1381,7 +1672,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -22.32, y: -11.41}
+  m_AnchoredPosition: {x: -22.319946, y: -11.409973}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1554646124
@@ -1422,6 +1713,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1554646122}
   m_CullTransparentMesh: 1
+--- !u!1 &1606686673
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1606686675}
+  - component: {fileID: 1606686674}
+  m_Layer: 0
+  m_Name: CardManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1606686674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606686673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40fe019b320f2492fa8573cc5e8c639c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardManager
+  cardSelectionUI: {fileID: 1435900331}
+  cardPrefab: {fileID: 2160568083745988614, guid: 0050396bbab4a47acb09bfbe33c74dfd, type: 3}
+  cardPositionOne: {fileID: 521716149}
+  cardPositionTwo: {fileID: 125893270}
+  cardPositionThree: {fileID: 329809504}
+  deck:
+  - {fileID: 11400000, guid: 58085dff0b825490f8c7891d95b98def, type: 2}
+  - {fileID: 11400000, guid: 6bfbf791b010e4d9c86f3174256639c6, type: 2}
+  - {fileID: 11400000, guid: 54b22ef6e2adf403db7c75542466818d, type: 2}
+  - {fileID: 11400000, guid: b2ff6ba4368dc466dacb51abbc7673c7, type: 2}
+  player1Stats: {fileID: 1213256710}
+  player2Stats: {fileID: 623255085}
+--- !u!4 &1606686675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1606686673}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.52025, y: 0.39316, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1675483312
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,6 +1802,10 @@ MonoBehaviour:
   roundsToWin: 8
   player1Score: 0
   player2Score: 0
+  player1SpawnPoint: {fileID: 1184045043}
+  player2SpawnPoint: {fileID: 2057171617}
+  player1Cannon: {fileID: 1213256703}
+  player2Cannon: {fileID: 623255077}
 --- !u!4 &1675483314
 Transform:
   m_ObjectHideFlags: 0
@@ -1482,6 +1833,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cbc46a41c6574d47914eb7252d98568, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneReloader
+--- !u!1 &2057171616
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2057171617}
+  m_Layer: 0
+  m_Name: Player2SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2057171617
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057171616}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.86, y: 0.00102, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2144575839
 GameObject:
   m_ObjectHideFlags: 0
@@ -1633,3 +2015,8 @@ SceneRoots:
   - {fileID: 739607793}
   - {fileID: 1165284709}
   - {fileID: 2144575842}
+  - {fileID: 1311062201}
+  - {fileID: 1606686675}
+  - {fileID: 1435900332}
+  - {fileID: 1184045043}
+  - {fileID: 2057171617}

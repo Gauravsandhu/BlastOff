@@ -7,4 +7,5 @@ public class CannonStats : MonoBehaviour
     public float damageMultiplier = 1f;
     public float bulletSpeedMultiplier = 1f;
 
+    public float healthMultiplier = 1f;
 }

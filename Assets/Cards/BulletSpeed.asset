@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: BulletSpeed
   m_EditorClassIdentifier: Assembly-CSharp::CardSO
   cardImage: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  cardText: 5% Chance of Critical Hit
-  effectValue: 1.05
+  cardText: +30% bullet speed
+  effectValue: 0.3
   isUnique: 0
   unlockLevel: 0
-  effectType: 0
+  effectType: 3

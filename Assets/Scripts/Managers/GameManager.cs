@@ -26,6 +26,10 @@ public class GameManager : MonoBehaviour
         player2Cannon.transform.position = player2SpawnPoint.position;
         player1Cannon.SetActive(true);
         player2Cannon.SetActive(true);
+        player1Cannon.GetComponent<CannonHealth>().ResetHealth();
+        player2Cannon.GetComponent<CannonHealth>().ResetHealth();
+     
+
     }
 
     private void Awake()

@@ -124,7 +124,10 @@ public class CardManager : MonoBehaviour
             Debug.Log("New moveSpeedMultiplier: " + stats.moveSpeedMultiplier);
             break;
         case CardSO.CardEffect.ShotSpeed:
-        stats.bulletSpeedMultiplier += card.effectValue;
+            stats.bulletSpeedMultiplier += card.effectValue;
+            break;
+        case CardSO.CardEffect.HealthIncrease:
+            stats.healthMultiplier += card.effectValue;
             break;
     }
 }

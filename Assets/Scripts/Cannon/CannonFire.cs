@@ -10,6 +10,8 @@ public class CannonFire : MonoBehaviour
     [SerializeField] private CannonStats stats;
     [SerializeField] private Transform muzzle;
 
+    [SerializeField] private float baseDamage = 50f;
+
     [SerializeField] private float firePower = 15f;
     [SerializeField] private float reloadTime = 1f;
     private float reloadTimer = 0f;
@@ -34,8 +36,9 @@ public class CannonFire : MonoBehaviour
     private void Fire()
     {
        GameObject cannonball  = Instantiate(cannonballPrefab,muzzle.position,muzzle.rotation);
-       Rigidbody2D rb = cannonball.GetComponent<Rigidbody2D>();
-        Debug.Log(muzzle.eulerAngles.z);
+    Rigidbody2D rb = cannonball.GetComponent<Rigidbody2D>();
+    Cannonball ballScript = cannonball.GetComponent<Cannonball>();
+    ballScript.SetDamage(baseDamage * stats.damageMultiplier);
         rb.linearVelocity = muzzle.right * firePower * stats.bulletSpeedMultiplier;
 
        // Collider2D ballCollider = cannonball.GetComponent<Collider2D>();
