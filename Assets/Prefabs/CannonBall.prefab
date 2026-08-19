@@ -171,6 +171,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cannonball
   destroyCounter: 0
+  damage: 50
+  damageAudio: {fileID: 8300000, guid: fdad373f69f6c4a128270a77dc1a08be, type: 3}
+  deathAudio: {fileID: 8300000, guid: 345226923422642a7859bc133a299c84, type: 3}
   maxSpeed: 40
   rb: {fileID: 7176705565618463161}
   max_bounce: 5

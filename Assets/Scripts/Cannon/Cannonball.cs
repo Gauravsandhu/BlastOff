@@ -4,6 +4,8 @@ public class Cannonball : MonoBehaviour
 {
     [SerializeField] private float destroyCounter = 0;
     [SerializeField] private float damage = 50f;
+    [SerializeField] private AudioClip damageAudio;
+    [SerializeField] private AudioClip deathAudio;
     public float maxSpeed = 400f;
     public Rigidbody2D rb;
     public float max_bounce = 5f;
@@ -14,10 +16,19 @@ public class Cannonball : MonoBehaviour
             collision.transform.root.gameObject.CompareTag("Player2Cannon"))
         {
             CannonHealth health = collision.transform.root.gameObject.GetComponent<CannonHealth>();
+            
             if (health != null)
             {
                 health.TakeDamage(damage);
+                 if (health.GetCurrentHealth() <= 0){
+                    SoundFXManager.Instance.PlaySoundFX(deathAudio, transform, 1f);
+                }
+                else
+                {
+                    SoundFXManager.Instance.PlaySoundFX(damageAudio, transform, 1f);
+                }
             }
+            
             Destroy(gameObject);
             return;
         }
